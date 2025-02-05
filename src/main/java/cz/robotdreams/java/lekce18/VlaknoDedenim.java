@@ -12,7 +12,7 @@ public class VlaknoDedenim extends Thread {
 
     @Override
     public void run() {
-        Util.cekej(100);
+        Util.cekej(5000);
         System.out.println("Tento text byl vypsan z noveho vlakna.");
     }
 

@@ -12,7 +12,17 @@ public class VlaknoInterrupt extends Thread {
 
     @Override
     public void run() {
-        Util.cekej(5000);
+        //Util.cekej(5000);
+        long soucet = 0;
+
+        for(long i = 0l ; i < 20_000_000_000l ; i++) {
+            soucet =+ i;
+            if(i % 10_000 == 0 &&  interrupted()) {
+                return;
+            }
+        }
+
+
         System.out.println("Tento text byl vypsan z noveho vlakna : " + this.getName());
     }
 
@@ -22,6 +32,8 @@ public class VlaknoInterrupt extends Thread {
         System.out.println("Instance vlakna vytvorena, zahajuji spousteni.");
         vlaknoDedenim.start();   //!!!!! Pozor, vlakno se spusti metodou .start().
                             //  Pokud bychom zavolali prekrytou metou .run(), program by bezel v aktualnim vlakne
+
+
         System.out.println("Vlakno spusteno, cekam na jeho konec");
 
         while(true) {

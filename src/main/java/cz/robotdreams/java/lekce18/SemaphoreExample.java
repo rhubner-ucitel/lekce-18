@@ -12,11 +12,12 @@ public class SemaphoreExample {
         final Semaphore s = new Semaphore(3);
 
         Runnable pomalaOperace = () -> {
+
             try {
                 s.acquire(); //Muze vyhodit vyjimku InterruptedException
 
                 Util.sout("Zacinam vypocet");
-                Util.cekej(1500);
+                Util.cekej(2500);
                 Util.sout("Vypocet dokoncen");
             }catch (InterruptedException e) {
                 e.printStackTrace();

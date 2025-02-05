@@ -1,5 +1,6 @@
 package cz.robotdreams.java.lekce18;
 
+import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -8,9 +9,10 @@ public class LockExample {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        ExecutorService ec = Executors.newFixedThreadPool(2);
+        ExecutorService ec = Executors.newFixedThreadPool(10);
 
         final Lock lock = new ReentrantLock();
+
 
         Runnable dlouhyVypocet = () -> {
             lock.lock();

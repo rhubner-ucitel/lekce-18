@@ -27,6 +27,7 @@ public class SynchronizedExample {
             Util.cekej(10);
             Util.sout("Zacinam cist hodnoty : ");
             example.valuesAsVector();
+            Util.sout("Hodnoty precteny");
         }, "VlaknoCteci");
         ctuT.start();
     }

@@ -10,11 +10,10 @@ public class ExecutorExample {
 
         Executor ex = Executors.newFixedThreadPool(3);
 
-
-        ex.execute(() -> Util.sout("Tento kod byl spusten ve vlakne pomoci Executor.execute"));
-        ex.execute(() -> Util.sout("Tento kod byl spusten ve vlakne pomoci Executor.execute"));
-        ex.execute(() -> Util.sout("Tento kod byl spusten ve vlakne pomoci Executor.execute"));
-        ex.execute(() -> Util.sout("Tento kod byl spusten ve vlakne pomoci Executor.execute"));
+        ex.execute(() -> Util.sout("1Tento kod byl spusten ve vlakne pomoci Executor.execute"));
+        ex.execute(() -> Util.sout("2Tento kod byl spusten ve vlakne pomoci Executor.execute"));
+        ex.execute(() -> Util.sout("3Tento kod byl spusten ve vlakne pomoci Executor.execute"));
+        ex.execute(() -> Util.sout("4Tento kod byl spusten ve vlakne pomoci Executor.execute"));
 
         ((ExecutorService)ex).shutdown();
     }

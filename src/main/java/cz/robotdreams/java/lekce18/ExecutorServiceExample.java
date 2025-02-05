@@ -13,12 +13,13 @@ public class ExecutorServiceExample {
 
         Future<String> vypocet1 = ec.submit(() -> {
             Util.sout("Dlouhy vypocet");
-            Util.cekej(1500);
+            Util.cekej(5000);
             Util.sout("Vypocet hotov");
             return "42";
         });
 
         while(true) {
+
             if(!vypocet1.isDone()) {
                 Util.sout("Vypocet porad bezi, cekame....");
                 Util.cekej(333);
@@ -26,6 +27,7 @@ public class ExecutorServiceExample {
                 break;
             }
         }
+
 
         Util.sout("Vysledek vypoctu : " + vypocet1.get());
         ec.shutdown();
